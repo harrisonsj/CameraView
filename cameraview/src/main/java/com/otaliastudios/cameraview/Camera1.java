@@ -657,7 +657,7 @@ class Camera1 extends CameraController implements Camera.PreviewCallback, Camera
             mMediaRecorder.setAudioSource(MediaRecorder.AudioSource.DEFAULT);
         }
         CamcorderProfile profile = getCamcorderProfile();
-        mMediaRecorder.setOutputFormat(profile.fileFormat);
+        mMediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4);
         mMediaRecorder.setVideoFrameRate(profile.videoFrameRate);
         mMediaRecorder.setVideoSize(profile.videoFrameWidth, profile.videoFrameHeight);
         mMediaRecorder.setVideoEncoder(profile.videoCodec);
@@ -665,7 +665,7 @@ class Camera1 extends CameraController implements Camera.PreviewCallback, Camera
         if (mAudio == Audio.ON) {
             mMediaRecorder.setAudioChannels(profile.audioChannels);
             mMediaRecorder.setAudioSamplingRate(profile.audioSampleRate);
-            mMediaRecorder.setAudioEncoder(profile.audioCodec);
+            mMediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AAC);
             mMediaRecorder.setAudioEncodingBitRate(profile.audioBitRate);
         }
 
@@ -861,4 +861,3 @@ class Camera1 extends CameraController implements Camera.PreviewCallback, Camera
     // -----------------
     // Additional helper info
 }
-
